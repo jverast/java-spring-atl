@@ -1,0 +1,11 @@
+{
+  "category": "cine",
+  "question": "¿Cuál de las siguientes opciones no es una característica de las bases de datos relacionales?",
+  "options": [
+    "Almacenan datos en tablas",
+    "Permiten relaciones entre tablas",
+    "No requieren un lenguaje de consulta para acceder a los datos"
+  ],
+  "answer": 2,
+  "explanation": "Las bases de datos relacionales sí requieren un lenguaje de consulta para acceder a los datos. El lenguaje de consulta más utilizado es SQL, que permite a los usuarios realizar operaciones como: seleccionar, insertar, actualizar y remover datos"
+}
