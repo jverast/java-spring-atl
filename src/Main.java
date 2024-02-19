@@ -1,7 +1,4 @@
-import sessions.session_01.DiscountCalculator;
-import sessions.session_01.DogCalculator;
-import sessions.session_01.MeasurementCalculator;
-import sessions.session_01.TipCalculator;
+import sessions.session_01.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -24,9 +21,14 @@ public class Main {
          * System.out.println(d.getFinalPrice());
          * */
 
-        TipCalculator t = new TipCalculator();
-        t.getDataFromConsole();
-        System.out.println(t.getTip());
+        /*
+         * TipCalculator t = new TipCalculator();
+         * t.getDataFromConsole();
+         * System.out.println(t.getTip());
+         * */
 
+        GuessGame g = new GuessGame();
+        g.generateRandomNumber();
+        g.guessNumber();
     }
 }
