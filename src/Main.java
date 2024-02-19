@@ -1,6 +1,7 @@
 import sessions.session_01.DiscountCalculator;
 import sessions.session_01.DogCalculator;
 import sessions.session_01.MeasurementCalculator;
+import sessions.session_01.TipCalculator;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,9 +18,15 @@ public class Main {
          * System.out.println(mc.toKilometers());
          * */
 
-         DiscountCalculator d = new DiscountCalculator();
-         d.getDataFromConsole();
-         System.out.println(d.getFinalPrice());
+        /*
+         * DiscountCalculator d = new DiscountCalculator();
+         * d.getDataFromConsole();
+         * System.out.println(d.getFinalPrice());
+         * */
+
+        TipCalculator t = new TipCalculator();
+        t.getDataFromConsole();
+        System.out.println(t.getTip());
 
     }
 }
