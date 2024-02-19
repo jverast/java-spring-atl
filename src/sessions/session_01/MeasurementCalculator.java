@@ -3,9 +3,9 @@ package sessions.session_01;
 import sessions.Session;
 
 public class MeasurementCalculator extends Session {
-    private double miles;
+    private final double miles;
 
-    public void getDataFromConsole() {
+    public MeasurementCalculator() {
         this.getData("Miles: ");
         double miles = Double.parseDouble(this.input);
 
@@ -18,6 +18,7 @@ public class MeasurementCalculator extends Session {
     }
 
     public String toKilometers(){
-        return "Converted to kilometers: " + this.miles * 1.60934;
+        final double FACTOR = 1.60934;
+        return "Converted to kilometers: " + this.miles * FACTOR;
     }
 }

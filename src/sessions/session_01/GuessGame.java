@@ -4,12 +4,13 @@ import sessions.Session;
 
 public class GuessGame extends Session {
     public int user;
-    public int random;
+    private final int random;
+    final int LIMIT = 10;
+    private int health;
 
-    public void generateRandomNumber() {
+    public GuessGame() {
         double random = Math.random();
-        final int LIMIT = 100;
-
+        this.health = (int) Math.ceil(LIMIT * 0.25);
         this.random = (int) Math.floor(random * LIMIT);
     }
 
@@ -17,9 +18,16 @@ public class GuessGame extends Session {
         this.getData("¿Qué número es?: ");
         int number = Integer.parseInt(this.input);
 
-        if(random == number) {
+        if (this.random == number) {
             System.out.println("Adivinaste el número :)");
         } else {
+            health --;
+            System.out.println("Te quedan " + health + " vidas restantes");
+            if (health == 0) {
+                System.out.println("Perdiste :(");
+                System.exit(1);
+            }
+
             guessNumber();
         }
     }

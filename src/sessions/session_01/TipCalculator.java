@@ -3,10 +3,10 @@ package sessions.session_01;
 import sessions.Session;
 
 public class TipCalculator extends Session {
-    private double bill;
-    private int tipPercentage;
+    private final double bill;
+    private final int tipPercentage;
 
-    public void getDataFromConsole() {
+    public TipCalculator() {
         this.getData("Total bill: ");
         double bill = Double.parseDouble(this.input);
 

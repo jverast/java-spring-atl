@@ -3,10 +3,10 @@ package sessions.session_01;
 import sessions.Session;
 
 public class DiscountCalculator extends Session {
-    private double price;
-    private int discount;
+    private final double price;
+    private final int discount;
 
-    public void getDataFromConsole() {
+    public DiscountCalculator() {
         this.getData("Selling price: ");
         double price = Double.parseDouble(this.input);
 

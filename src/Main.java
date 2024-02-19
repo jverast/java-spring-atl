@@ -5,30 +5,25 @@ public class Main {
 
         /*
          * DogCalculator dog = new DogCalculator();
-         * dog.getDataFromConsole();
          * System.out.println(dog.toHumanAge());
          * */
 
         /*
          * MeasurementCalculator mc = new MeasurementCalculator();
-         * mc.getDataFromConsole();
          * System.out.println(mc.toKilometers());
          * */
 
         /*
          * DiscountCalculator d = new DiscountCalculator();
-         * d.getDataFromConsole();
          * System.out.println(d.getFinalPrice());
          * */
 
         /*
          * TipCalculator t = new TipCalculator();
-         * t.getDataFromConsole();
          * System.out.println(t.getTip());
          * */
 
         GuessGame g = new GuessGame();
-        g.generateRandomNumber();
         g.guessNumber();
     }
 }

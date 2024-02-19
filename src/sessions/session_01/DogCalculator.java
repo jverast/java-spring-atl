@@ -3,9 +3,9 @@ package sessions.session_01;
 import sessions.Session;
 
 public class DogCalculator extends Session {
-    private int age;
+    private final int age;
 
-    public void getDataFromConsole() {
+    public DogCalculator() {
         this.getData("Dog's age: ");
         int age = Integer.parseInt(this.input);
 
@@ -18,6 +18,7 @@ public class DogCalculator extends Session {
     }
 
     public String toHumanAge(){
-        return "Converted to human: " + this.age * 7;
+        final int FACTOR = 7;
+        return "Converted to human: " + this.age * FACTOR;
     }
 }
