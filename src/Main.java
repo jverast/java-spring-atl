@@ -1,29 +1,8 @@
-import sessions.session_01.*;
+import sessions.session_02.*;
 
 public class Main {
     public static void main(String[] args) {
-
-        /*
-         * DogCalculator dog = new DogCalculator();
-         * System.out.println(dog.toHumanAge());
-         * */
-
-        /*
-         * MeasurementCalculator mc = new MeasurementCalculator();
-         * System.out.println(mc.toKilometers());
-         * */
-
-        /*
-         * DiscountCalculator d = new DiscountCalculator();
-         * System.out.println(d.getFinalPrice());
-         * */
-
-        /*
-         * TipCalculator t = new TipCalculator();
-         * System.out.println(t.getTip());
-         * */
-
-        GuessGame g = new GuessGame();
-        g.guessNumber();
+        SearchEngine s = new SearchEngine(3);
+        System.out.println(s.generateLink());
     }
 }
