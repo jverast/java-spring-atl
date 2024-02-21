@@ -7,24 +7,26 @@ public class DiscountCalculator extends Session {
     private final int discount;
 
     public DiscountCalculator() {
-        this.getData("Selling price: ");
-        double price = Double.parseDouble(this.input);
+        double price = this.getPrice();
+        int discount = this.getDiscount();
 
-        this.getData("Discount: ");
-        int discount = Integer.parseInt(this.input);
-
-        if (price < 0) {
-            System.out.println("Invalid selling price");
-            System.exit(1);
-        }
-
-        if (discount < 0 || discount > 100) {
-            System.out.println("Invalid discount");
+        if (price < 0 || discount < 0 || discount > 100) {
+            System.out.println("Invalid data");
             System.exit(1);
         }
 
         this.price = price;
         this.discount = discount;
+    }
+
+    private double getPrice() {
+        this.getData("Selling price: ");
+        return Double.parseDouble(this.input);
+    }
+
+    private int getDiscount() {
+        this.getData("Discount: ");
+        return Integer.parseInt(this.input);
     }
 
     private double calculateFinalPrice(double price, int discount) {

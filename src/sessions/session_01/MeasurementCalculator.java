@@ -6,8 +6,7 @@ public class MeasurementCalculator extends Session {
     private final double miles;
 
     public MeasurementCalculator() {
-        this.getData("Miles: ");
-        double miles = Double.parseDouble(this.input);
+        double miles = this.getMiles();
 
         if (miles < 0) {
             System.out.println("Invalid data");
@@ -20,5 +19,10 @@ public class MeasurementCalculator extends Session {
     public String toKilometers(){
         final double FACTOR = 1.60934;
         return "Converted to kilometers: " + this.miles * FACTOR;
+    }
+
+    private double getMiles() {
+        this.getData("Miles: ");
+        return Double.parseDouble(this.input);
     }
 }

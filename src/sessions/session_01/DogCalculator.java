@@ -6,8 +6,7 @@ public class DogCalculator extends Session {
     private final int age;
 
     public DogCalculator() {
-        this.getData("Dog's age: ");
-        int age = Integer.parseInt(this.input);
+        int age = getAge();
 
         if (age < 0) {
             System.out.println("Invalid data");
@@ -15,6 +14,11 @@ public class DogCalculator extends Session {
         }
 
         this.age = age;
+    }
+
+    private int getAge() {
+        this.getData("Dog's age: ");
+        return Integer.parseInt(this.input);
     }
 
     public String toHumanAge(){

@@ -7,19 +7,11 @@ public class TipCalculator extends Session {
     private final int tipPercentage;
 
     public TipCalculator() {
-        this.getData("Total bill: ");
-        double bill = Double.parseDouble(this.input);
+        double bill = getBill();
+        int tipPercentage = getTipPercentage();
 
-        this.getData("Percentage of tip: ");
-        int tipPercentage = Integer.parseInt(this.input);
-
-        if (bill < 0) {
-            System.out.println("Invalid bill");
-            System.exit(1);
-        }
-
-        if (tipPercentage < 0 || tipPercentage > 100) {
-            System.out.println("Invalid tip percentage");
+        if (bill < 0 || tipPercentage < 0 || tipPercentage > 100) {
+            System.out.println("Invalid data");
             System.exit(1);
         }
 
@@ -27,11 +19,21 @@ public class TipCalculator extends Session {
         this.tipPercentage = tipPercentage;
     }
 
+    private int getTipPercentage() {
+        this.getData("Percentage of tip: ");
+        return Integer.parseInt(this.input);
+    }
+
+    private double getBill() {
+        this.getData("Total bill: ");
+        return Double.parseDouble(this.input);
+    }
+
     private double calculateTip(double bill, int tipPercentage) {
         return (bill * (float) tipPercentage / 100);
     }
 
-    public String getTip(){
-        return "Tip: " + calculateTip(this.bill, this.tipPercentage);
+    public void showTip(){
+        System.out.println("Tip: " + calculateTip(this.bill, this.tipPercentage));
     }
 }

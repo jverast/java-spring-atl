@@ -10,25 +10,19 @@ public class RockPaperScissorsGame extends Session {
     }
 
     public void playGame() {
-        showGameRules();
+        this.showGameRules();
+        int player = this.getPlayer();
+        this.showResult(player);
+    }
+
+    private int getPlayer() {
         this.getData("¿Piedra, papel o tijera?: ");
 
         if(!this.input.matches("[123]")) {
             System.exit(1);
         }
 
-        int player = Integer.parseInt(this.input);
-        String result = getResult(player);
-
-        System.out.println("Computadora: " + this.computer);
-        System.out.println("\n" + result);
-    }
-
-    private void showGameRules() {
-        System.out.println("Rock, Paper, Scissors Game!");
-        System.out.println("1. Piedra");
-        System.out.println("2. Papel");
-        System.out.println("3. Tijeras");
+        return Integer.parseInt(this.input);
     }
 
     private String getResult(int player) {
@@ -47,6 +41,18 @@ public class RockPaperScissorsGame extends Session {
         }
 
         return result;
+    }
+
+    private void showResult(int player) {
+        System.out.println("Computadora: " + this.computer);
+        System.out.println("\n" + getResult(player));
+    }
+
+    private void showGameRules() {
+        System.out.println("Rock, Paper, Scissors Game!");
+        System.out.println("1. Piedra");
+        System.out.println("2. Papel");
+        System.out.println("3. Tijeras");
     }
 
     private int generateRandomNumber() {

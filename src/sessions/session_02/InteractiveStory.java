@@ -22,34 +22,33 @@ public class InteractiveStory extends Session {
         }
     };
 
-    public void getStorytelling() {
+    public void playStory() {
         int option = this.option;
         switch (option) {
             case 0:
-                printStoryAndOptions(0);
-                option = getOption();
+                printStory(0, true);
+                option = getUserOption();
                 break;
             case 1:
                 break;
             case 2:
-                printStoryAndOptions(1);
-                option = getOption() + 2;
+                printStory(1, true);
+                option = getUserOption() + 2;
                 break;
             case 3:
-                System.out.println(this.storytelling[2]);
+                printStory(2, false);
                 break;
             case 4:
-                System.out.println(this.storytelling[3]);
+                printStory(3, false);
         }
-
-        System.out.print("\n");
         setStorytelling(option);
     }
 
-    private int getOption() {
+    private int getUserOption() {
         this.getData("El usuario escoge: ");
 
         if(!this.input.matches("[12]")) {
+            System.out.println("Invalid input");
             System.exit(1);
         }
 
@@ -62,13 +61,16 @@ public class InteractiveStory extends Session {
         }
 
         this.option = option;
-        getStorytelling();
+        playStory();
     }
 
-    private void printStoryAndOptions(int index) {
+    private void printStory(int index, boolean options) {
         System.out.println(this.storytelling[index]);
-        for(int i = 0; i < this.options.length; i ++) {
-            System.out.println(this.options[index][i]);
+        if(options) {
+            for(int i = 0; i < this.options.length; i ++) {
+                System.out.println(this.options[index][i]);
+            }
         }
+        System.out.print("\n");
     }
 }

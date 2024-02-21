@@ -6,7 +6,6 @@ public class SearchEngine extends Session {
     private String url;
 
     public SearchEngine(int option) {
-
         switch(option) {
             case 1:
                 this.getData("País: ");
