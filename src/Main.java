@@ -1,8 +1,9 @@
-import sessions.session_04.*;
+
+import sessions.session_05.*;
 
 public class Main {
     public static void main(String[] args) {
-        MorseCode m = new MorseCode();
-        System.out.println(m.convertToAlphaNumeric());
+        PeopleFinder s = new PeopleFinder();
+        s.showResult();
     }
 }
