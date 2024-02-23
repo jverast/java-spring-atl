@@ -1,10 +1,9 @@
 
-import sessions.session_06.*;
+import sessions.session_07.*;
 
 public class Main {
     public static void main(String[] args) {
-        Person person = new Person();
-        System.out.println(person.isLegalAge());
-        System.out.println(person.toString());
+        SecretSanta secretSanta = new SecretSanta();
+        secretSanta.playSecretSanta();
     }
 }
