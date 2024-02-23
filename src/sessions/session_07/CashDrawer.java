@@ -17,7 +17,6 @@ public class CashDrawer extends Session {
         buildMoneyCount();
     }
 
-
     public void show() {
         float change = (float) calculateChange(payment, cost) / 100;
 
