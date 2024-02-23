@@ -1,9 +1,10 @@
 
-import sessions.session_05.*;
+import sessions.session_06.*;
 
 public class Main {
     public static void main(String[] args) {
-        PeopleFinder s = new PeopleFinder();
-        s.showResult();
+        Person person = new Person();
+        System.out.println(person.isLegalAge());
+        System.out.println(person.toString());
     }
 }
