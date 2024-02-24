@@ -1,9 +1,9 @@
 
-import sessions.session_07.*;
+import sessions.session_08.*;
 
 public class Main {
     public static void main(String[] args) {
-        RiddleGame riddleGame = new RiddleGame();
-        riddleGame.playRiddle();
+        RoleGame roleGame = new RoleGame();
+        roleGame.playGame();
     }
 }
